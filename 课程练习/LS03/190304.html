@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+</head>
+<body>
+    <script>
+    	//基本数据类型，在操作过程中，会有自动装箱过程，
+    	//生成临时对象，临时对象在使用完成后会自动释放
+        var number = 10;
+        num.toString();
+
+
+        var num = 10;
+        var numObject = new Number(num);//注意number大写
+        numObject.toString();//调用方法
+
+
+        num.p = 10;
+        var t = num.p;
+        console.log(t);//临时对象会被释放  
+
+
+        //保留指定位数，并进行四舍五入
+        (365.47).toFixed(1); 
+        var num1 = 4652.261846;
+        var numObj2 = new Number(num1);
+        console.log(numObj2);
+        numObj2.toFixed(3);
+
+
+        var str1 = "abcdefg";
+        var strObj = new String(str1);
+        console.log(strObj);
+        //返回特定索引位置的字符
+        strObj.charAt(2);
+        //返回特定索引位置的字符的unicode码
+        strObj.charCodeAt(0);
+        //(截取起始位置，截取的结束位置)
+        strObj.slice(0,2);
+        //（截取字符串起始位置，截取字符串长度）字符串切片
+        strObj.substr(3,0);
+        strObj.substring(0,2);
+        //(截取字符串起始位置，截取字符串结束位置)
+		//如果起始索引大于结束索引，会自动互换位置，负值忽略
+        //若有超出索引值0-str.length-1  自动截断
+        var str = "abc*def*gh";
+		str.split("*");
+		//去处字符串两边的空白字符，字符串内部的不去除
+		//split(特定的字符，限定元素个数) 
+        //将字符串以特定的字符分割，将字符串作为数组元素生成数组
+		var str = "     abc    d     ";
+		str.trim();
+
+
+        "B".localeCompare("A"); 
+
+
+        //基本数据类型，变量__proto__属性 == 变量的构造函数的prototype
+        //num.__proto__==Number.protype
+        var num3 = 20;
+        console.log(num3.__proto__);
+        console.log(Number.prototype);
+
+
+    </script>
+</body>
+</html>
