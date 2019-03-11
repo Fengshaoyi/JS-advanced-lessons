@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+</head>
+<body>
+    <script>
+
+        var a = 45;
+        if(54 == a){//发反写
+        	console.log("判等");
+        }
+
+        //== ===
+        var a1 = 20;
+        var a2 = "20";//会进行隐式类型转换
+        if(a1 == a2){
+
+        }
+        if(a1 === a2){//=== 先判断类型，再判断值
+
+        }
+
+        //算数运算符
+        var x = "1";
+        console.log(++x)；//先加再输出
+        console.log(x++); //先输出再加
+        console.log(x);
+
+        console.log(x+=1);//字符串拼接
+
+        //关系运算符
+        {}==={};//判断的是地址，不相等
+
+
+        //&& ||
+        //操作数非布尔类型，短路原则
+        console.log(2&&4);//左真右，左假左
+        console.log({x:2}&&{name:"Jack"});
+        console.log({}&&"world");//空对象为真
+
+        console.log(2||4);//和&&相反
+
+        //实际应用
+        var score = 85;
+		console.log((score>90&&"优")||(score>75&&"良")||(score>60&&"及格")||"不及格");
+		//switch和case做的是全等的判断，值和类型必须均相等
+		switch(true){
+			case score>90:
+				console.log("优");
+				break;
+			case score>75:
+				console.log("良");
+				break;
+			default:
+				console.log("不及格")；
+				break;
+		}
+
+		//定义函数的形参和调用函数的实参个数可以不一致
+		//函数没有传实参也可调用(undefined)
+		function sum(x,y,z){//仅仅声明
+			console.log(x,y,z);
+			x = x || 1;//可以取右侧操作数为默认值
+			y = y || 2;//若实参取false，则输出默认值
+			z = z || 3;
+			return x+y+z;
+		}
+		console.log(sum(4,5,6));
+
+		//ES6中设置函数默认值的方法
+		function sum1(x,y = 2,z = 3){
+			return x+y+z;
+		}
+
+		
+    </script>
+</body>
+</html>
